@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Tamilarasan S — AI & Data Science Portfolio</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+    <!-- Tailwind custom config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'aurora-green': '#00ffaa',
+              'aurora-blue': '#00aaff',
+              'aurora-purple': '#aa00ff',
+              'aurora-pink': '#ff00aa',
+              'dark-bg': '#0a0e1a',
+              'dark-card': '#1a1f2e',
+              'dark-border': '#2a2f3e'
+            },
+            animation: {
+              'aurora': 'aurora 15s ease-in-out infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'slide-up': 'slideUp 0.5s ease-out',
+              'glow': 'glow 2s ease-in-out infinite'
+            },
+            keyframes: {
+              aurora: {
+                '0%, 100%': { 'background-position': '0% 50%', 'background-size':'200% 200%' },
+                '50%': { 'background-position': '100% 50%', 'background-size':'200% 200%' }
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-20px)' }
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' }
+              },
+              glow: {
+                '0%, 100%': { boxShadow: '0 0 5px rgba(0, 255, 170, 0.5), 0 0 20px rgba(0, 255, 170, 0.3)' },
+                '50%': { boxShadow: '0 0 20px rgba(0, 170, 255, 0.8), 0 0 40px rgba(0, 170, 255, 0.4)' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark-bg text-gray-200 aurora-bg">
+
+  <!-- Aurora overlay -->
+  <div class="aurora-overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-dark-bg/90 backdrop-blur-md border-b border-dark-border z-50">
+    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+      <div class="text-2xl font-bold gradient-text">Tamilarasan S</div>
+      <div class="hidden md:flex space-x-6">
+        <a href="#home" class="hover:text-aurora-green">Home</a>
+        <a href="#about" class="hover:text-aurora-green">About</a>
+        <a href="#skills" class="hover:text-aurora-green">Skills</a>
+        <a href="#portfolio" class="hover:text-aurora-green">Portfolio</a>
+        <a href="#contact" class="hover:text-aurora-green">Contact</a>
+      </div>
+      <div class="md:hidden">
+        <button onclick="toggleMobileMenu()" aria-label="menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden px-6 pb-4 space-y-2">
+      <a href="#home" class="block">Home</a>
+      <a href="#about" class="block">About</a>
+      <a href="#skills" class="block">Skills</a>
+      <a href="#portfolio" class="block">Portfolio</a>
+      <a href="#contact" class="block">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="min-h-screen flex items-center justify-center pt-24 relative">
+    <div class="container mx-auto px-6 text-center z-10">
+      <h1 class="text-5xl md:text-6xl font-bold mb-4">
+        Hello, I'm <span class="gradient-text">Tamilarasan S</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-400 mb-6">
+        B.Tech — Artificial Intelligence & Data Science
+      </p>
+      <p class="text-lg text-gray-400 max-w-3xl mx-auto mb-8">
+        Crafting intelligent data-driven solutions that illuminate insights and drive innovation. Passionate about AI, machine learning, and solving real-world challenges through data.
+      </p>
+      <div class="flex justify-center gap-4">
+        <a href="#portfolio" class="px-6 py-3 rounded-full bg-gradient-to-r from-aurora-green to-aurora-blue text-dark-bg font-semibold hover:scale-105 transition">
+          View Projects
+        </a>
+        <a href="Tamilarasan_S_Resume.pdf" class="px-6 py-3 rounded-full border-2 border-aurora-green hover:bg-aurora-green hover:text-dark-bg transition" download>
+          Download Resume
+        </a>
+      </div>
+      <div class="mt-8 flex justify-center space-x-6">
+        <a href="https://github.com/TAMILARASANS5" aria-label="github" class="text-2xl hover:text-aurora-green"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/tamilarasan-s-/" aria-label="linkedin" class="text-2xl hover:text-aurora-blue"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <!-- floating particles -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute w-3 h-3 bg-aurora-green rounded-full animate-float" style="top:15%; left:10%"></div>
+      <div class="absolute w-3 h-3 bg-aurora-blue rounded-full animate-float" style="top:60%; left:75%; animation-delay:1s;"></div>
+      <div class="absolute w-3 h-3 bg-aurora-purple rounded-full animate-float" style="top:40%; left:60%; animation-delay:2s;"></div>
+    </div>
+
+    <!-- scroll cue -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-aurora-green z-20">
+      <i class="fas fa-chevron-down text-3xl"></i>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20">
+    <div class="container mx-auto px-6 max-w-5xl">
+      <h2 class="text-4xl font-bold text-center mb-8 gradient-text">About Me</h2>
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <p class="text-gray-400 leading-relaxed mb-4">
+            I'm a B.Tech Artificial Intelligence and Data Science student at Saveetha School of Engineering, Chennai (CGPA: 8.3).
+          </p>
+          <p class="text-gray-400 leading-relaxed mb-4">
+            I work with Python, R, SQL, Pandas, scikit-learn and Power BI to extract insights and build ML solutions. My interests include machine learning, data visualization, and cybersecurity.
+          </p>
+          <div class="grid grid-cols-2 gap-4 mt-4">
+            <div class="bg-dark-card p-4 rounded-lg border border-dark-border">
+              <div class="text-3xl font-bold text-aurora-green">Projects</div>
+              <div class="text-sm text-gray-400">3 Featured</div>
+            </div>
+            <div class="bg-dark-card p-4 rounded-lg border border-dark-border">
+              <div class="text-3xl font-bold text-aurora-blue">Experience</div>
+              <div class="text-sm text-gray-400">Student Projects & Internships</div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <div class="w-72 h-72 rounded-full bg-gradient-to-br from-aurora-green to-aurora-purple p-1">
+            <div class="w-full h-full rounded-full bg-dark-bg flex items-center justify-center text-6xl">👨‍💻</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-20 bg-dark-card/10">
+    <div class="container mx-auto px-6 max-w-5xl">
+      <h2 class="text-4xl font-bold text-center mb-8 gradient-text">Skills</h2>
+      <div class="grid md:grid-cols-1 gap-10">
+        <div class="bg-dark-card p-6 rounded-lg card-hover">
+          <h3 class="text-aurora-green text-xl font-semibold mb-6">Programming & Tools</h3>
+          <div class="space-y-6">
+            <div>
+              <div class="flex justify-between mb-2">
+                <span>Python (Pandas, NumPy)</span>
+                <span class="text-sm text-gray-300">92%</span>
+              </div>
+              <div class="w-full bg-[#0e1520] rounded-full h-3">
+                <div class="h-3 rounded-full" style="width:90%; background: linear-gradient(90deg,#00ffaa,#00aaff);"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-2">
+                <span>R</span>
+                <span class="text-sm text-gray-300">85%</span>
+              </div>
+              <div class="w-full bg-[#0e1520] rounded-full h-3">
+                <div class="h-3 rounded-full" style="width:75%; background: linear-gradient(90deg,#00aaff,#aa00ff);"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-2">
+                <span>SQL</span>
+                <span class="text-sm text-gray-300">91%</span>
+              </div>
+              <div class="w-full bg-[#0e1520] rounded-full h-3">
+                <div class="h-3 rounded-full" style="width:80%; background: linear-gradient(90deg,#aa00ff,#ff00aa);"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-2">
+                <span>Power BI</span>
+                <span class="text-sm text-gray-300">91%</span>
+              </div>
+              <div class="w-full bg-[#0e1520] rounded-full h-3">
+                <div class="h-3 rounded-full" style="width:80%; background: linear-gradient(90deg,#00ffaa,#00aaff);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="py-20">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <h2 class="text-4xl font-bold text-center mb-8 gradient-text">Work & Internship Experience</h2>
+      <div class="space-y-8">
+        <div class="relative pl-8 border-l-2 border-aurora-green">
+          <div class="absolute -left-3 top-2 w-5 h-5 bg-aurora-green rounded-full"></div>
+          <div class="bg-dark-card p-6 rounded-lg card-hover">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-semibold text-aurora-green">AI & ML Developer Intern — Intellectsera Technologies</h3>
+              <span class="text-sm text-gray-400">Sep 2025 - Present</span>
+            </div>
+            <p class="text-gray-300 font-medium mb-2">Intellectsera Technologies</p>
+            <p class="text-gray-400">Working on AI/ML model development, testing, and collaborating with mentors on real-world projects.</p>
+          </div>
+        </div>
+        <div class="relative pl-8 border-l-2 border-aurora-blue">
+          <div class="absolute -left-3 top-2 w-5 h-5 bg-aurora-blue rounded-full"></div>
+          <div class="bg-dark-card p-6 rounded-lg card-hover">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-semibold text-aurora-blue">Data Science Intern — Shiash Info Solutions</h3>
+              <span class="text-sm text-gray-400">Sep 2024 - Nov 2024</span>
+            </div>
+            <p class="text-gray-300 font-medium mb-2">Shiash Info Solutions</p>
+            <p class="text-gray-400">Worked on data preprocessing, visualization, and applied ML models for business analysis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio (Projects) -->
+  <section id="portfolio" class="py-20">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <h2 class="text-4xl font-bold text-center mb-8 gradient-text">Projects</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Project 1 -->
+        <div class="bg-dark-card rounded-lg overflow-hidden card-hover">
+          <div class="h-44 bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center">
+            <i class="fas fa-chart-line text-6xl text-dark-bg"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Sales Forecasting</h3>
+            <p class="text-gray-400 mb-4">Predicted sales using regression and time-series techniques; visualized insights with Power BI.</p>
+            <div class="flex space-x-4">
+              <a href="https://github.com/TAMILARASANS5/Sales_Forecasting" target="_blank" rel="noopener noreferrer" class="text-aurora-green hover:text-aurora-blue">
+                <i class="fab fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="bg-dark-card rounded-lg overflow-hidden card-hover">
+          <div class="h-44 bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center">
+            <i class="fas fa-user-shield text-6xl text-dark-bg"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Suspicious Login Detection</h3>
+            <p class="text-gray-400 mb-4">Flagged anomalous login attempts using behavioral features and rule-based filters in Python.</p>
+            <div class="flex space-x-4">
+              <a href="https://github.com/TAMILARASANS5/Suspicious-Login-Detection" target="_blank" rel="noopener noreferrer" class="text-aurora-green hover:text-aurora-blue">
+                <i class="fab fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="bg-dark-card rounded-lg overflow-hidden card-hover">
+          <div class="h-44 bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center">
+            <i class="fas fa-lock text-6xl text-dark-bg"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Password Strength Analyzer</h3>
+            <p class="text-gray-400 mb-4">Analyzes strength and checks breach exposure via API; offers suggestions to harden passwords.</p>
+            <div class="flex space-x-4">
+              <a href="https://github.com/TAMILARASANS5/SecurePassword-Analyzer" target="_blank" rel="noopener noreferrer" class="text-aurora-green hover:text-aurora-blue">
+                <i class="fab fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 bg-dark-card/10">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <h2 class="text-4xl font-bold text-center mb-6 gradient-text">Get In Touch</h2>
+      <div class="grid md:grid-cols-2 gap-8 items-start">
+        <div class="space-y-8">
+          <div class="flex items-center space-x-4">
+            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center text-dark-bg">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <p class="text-gray-400 text-sm">Email</p>
+              <p class="text-white font-medium">tamilarasan0051@gmail.com</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center text-dark-bg">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div>
+              <p class="text-gray-400 text-sm">Phone</p>
+              <p class="text-white font-medium">+91 9344383789</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center text-dark-bg">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <p class="text-gray-400 text-sm">Location</p>
+              <p class="text-white font-medium">Chennai, India</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="space-y-4 bg-dark-card p-6 rounded-lg">
+          <input type="text" placeholder="Your Name" class="w-full px-4 py-3 bg-[#0d1216] border border-dark-border rounded-lg focus:outline-none focus:border-aurora-green">
+          <input type="email" placeholder="Your Email" class="w-full px-4 py-3 bg-[#0d1216] border border-dark-border rounded-lg focus:outline-none focus:border-aurora-green">
+          <textarea placeholder="Your Message" rows="6" class="w-full px-4 py-3 bg-[#0d1216] border border-dark-border rounded-lg focus:outline-none focus:border-aurora-green"></textarea>
+          <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-aurora-green to-aurora-blue rounded-lg text-dark-bg font-semibold hover:scale-105 transition">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-dark-border">
+    <div class="container mx-auto px-6 text-center">
+      <p class="text-gray-400">© 2025 Tamilarasan S — AI & Data Science</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileMenu(){
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    }
+
+    // Intersection animations
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting) entry.target.classList.add('animate-slide-up');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+
+    document.querySelectorAll('section').forEach(s=>observer.observe(s));
+  </script>
+</body>
+</html>
